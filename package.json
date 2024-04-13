@@ -5,7 +5,10 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
@@ -16,6 +19,7 @@
     "typeorm": "^0.3.20"
   },
   "devDependencies": {
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "vitepress": "^1.1.0"
   }
 }

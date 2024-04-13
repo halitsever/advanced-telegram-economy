@@ -20,9 +20,10 @@
 </a>
 
 - 📈 [**Auto salary**](#) - User based salary with captcha secure
-- 📈 [**Central bank**](#) - Dynamic central bank
-- 🧑‍💻 [**Market**](#) - Working market
+- 🏦 [**Central bank**](#) - Dynamic central bank
+- 🧑‍💻 [**Market**](#) - Market with buyable items
 - 📈 [**And more crazy stuff**](#) - Gambling, random events, ranking
+- 🆙 <del>[**TODO**](#) - Help command and more clear usage informations</del>
 
 <a align="center" >
 <img src="https://halitsever-api.vercel.app/api/installation"/>
@@ -37,13 +38,13 @@ npm install
 Run with dev mode:
 
 ```bash
-BOT_TOKEN=... LANG=<en|tr> npm run dev
+TELEGRAM_BOT_TOKEN=... LANG=<en|tr> npm run dev
 ```
 
 Run with production mode:
 
 ```bash
-BOT_TOKEN=... LANG=<en|tr> npm run start
+TELEGRAM_BOT_TOKEN=... LANG=<en|tr> npm run start
 ```
 
 <a align="center" href="https://github.com/halitsever/repo_name/issues">
