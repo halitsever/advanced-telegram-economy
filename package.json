@@ -1,7 +1,9 @@
 {
+  "name": "advanced-telegram-economy",
   "license": "MIT",
   "author": "Halit Sever <halitsever@proton.me>",
   "scripts": {
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "prettier": "prettier --write ."
   },
