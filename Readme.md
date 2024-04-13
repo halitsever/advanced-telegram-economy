@@ -47,7 +47,7 @@ Run with production mode:
 TELEGRAM_BOT_TOKEN=... LANG=<en|tr> npm run start
 ```
 
-<a align="center" href="https://github.com/halitsever/repo_name/issues">
+<a align="center" href="https://github.com/halitsever/advanced-telegram-economy/issues">
 <img src="https://halitsever-api.vercel.app/api/issue"/>
 </a>
 
