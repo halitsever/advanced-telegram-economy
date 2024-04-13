@@ -1,41 +1,50 @@
 <p align="center" class="logo-section">
-<img src="#IMAGE_HERE" height="80" width="80"/>
+<img src="https://github.com/halitsever/advanced-telegram-economy/blob/main/src/assets/bot-logo.png?raw=true" height="80" width="80"/>
 </br>
-<img src="https://halitsever-api.vercel.app/api/repo-title?title=repo_name">
+<img src="https://halitsever-api.vercel.app/api/repo-title?title=Advanced%20Telegram%20Economy">
 
 <p align="center">
-✋ Coming soon...<br>
+⚙️ Advanced Telegram economy bot written with telegraf.js<br>
 <br/>
 <br/>
 <img src="https://img.shields.io/github/sponsors/halitsever"/> 
-<img src="https://img.shields.io/github/license/halitsever/repo_name"/> 
+<img src="https://img.shields.io/github/license/halitsever/advanced-telegram-bot"/> 
 </p>
 <p align="center">
 <a align="center" href="#">Documentation</a>
   </p>
 </p>
 
-
-
 <a align="center">
 <img src="https://halitsever-api.vercel.app/api/details"/>
 </a>
 
-- 🧑‍💻 [**TODO**](#) - update docs
-
-
-
-
+- 📈 [**Auto salary**](#) - User based salary with captcha secure
+- 📈 [**Central bank**](#) - Dynamic central bank
+- 🧑‍💻 [**Market**](#) - Working market
+- 📈 [**And more crazy stuff**](#) - Gambling, random events, ranking
 
 <a align="center" >
 <img src="https://halitsever-api.vercel.app/api/installation"/>
 </a>
 
+Dependency installation:
 
+```bash
+npm install
+```
 
-Todo: update docs
+Run with dev mode:
 
+```bash
+BOT_TOKEN=... LANG=<en|tr> npm run dev
+```
 
+Run with production mode:
+
+```bash
+BOT_TOKEN=... LANG=<en|tr> npm run start
+```
 
 <a align="center" href="https://github.com/halitsever/repo_name/issues">
 <img src="https://halitsever-api.vercel.app/api/issue"/>
@@ -45,11 +54,10 @@ Todo: update docs
 <img src="https://halitsever-api.vercel.app/api/sponsor"/>
 </a>
 
-
 <a align="center">
 <img src="https://halitsever-api.vercel.app/api/license"/>
 </a>
 
-<p>
-  ...
+<p align="center">
+  <a href="https://halit.org">Halit Sever</a> | MIT LICENSE 2024
 </p>

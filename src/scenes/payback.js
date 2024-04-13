@@ -6,9 +6,9 @@ const { getBankInfo, decreaseBankAmount } = require("../modules/bank.module");
 const { getString } = require("../lang/index");
 const logger = require("../logger");
 
-const paybackScene = new Scenes.BaseScene("payback");
+const salaryScene = new Scenes.BaseScene("salary");
 
-paybackScene.enter((ctx) => {
+salaryScene.enter((ctx) => {
   const captchaTimeout = setTimeout(() => {
     ctx.reply(getString("TIMEOUT_ERROR"));
     return ctx.scene.leave();
@@ -27,7 +27,7 @@ paybackScene.enter((ctx) => {
   ctx.reply(captchaString);
 });
 
-paybackScene.on(message("text"), async (ctx) => {
+salaryScene.on(message("text"), async (ctx) => {
   const answer = String(ctx.session.answer);
 
   const userResponse = ctx.message.text;
@@ -38,12 +38,12 @@ paybackScene.on(message("text"), async (ctx) => {
     return ctx.scene.leave();
   } else {
     clearTimeout(ctx.session.timeout);
-    await paybackUser({ ctx });
+    await giveSalaryToUser({ ctx });
     return ctx.scene.leave();
   }
 });
 
-const paybackUser = async ({ ctx }) => {
+const giveSalaryToUser = async ({ ctx }) => {
   try {
     const bankInfo = await getBankInfo({ ctx });
 
@@ -54,18 +54,18 @@ const paybackUser = async ({ ctx }) => {
 
     if (!user) return ctx.reply(getString("DATABASE_LOCK"));
 
-    if (Date.now() - user?.last_payback_time <= limitAsMs) return ctx.reply(getString("PAYBACK_ERROR"));
+    if (Date.now() - user?.last_salary_time <= limitAsMs) return ctx.reply(getString("salary_ERROR"));
 
     user.balance = user?.balance + 1;
-    user.last_payback_time = Date.now();
+    user.last_salary_time = Date.now();
 
     await decreaseBankAmount({ ctx, decreaseAmont: 1 });
     await setUser({ user });
-    ctx.reply(getString("PAYBACK_OK"));
+    ctx.reply(getString("salary_OK"));
   } catch (err) {
     logger.error(err);
     ctx.reply(getString("DATABASE_LOCK"));
   }
 };
 
-module.exports = paybackScene;
+module.exports = salaryScene;

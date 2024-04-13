@@ -5,7 +5,7 @@ const commands = {
   centralbank: "merkezbankasi",
   items: "esyalar",
   market: "market",
-  payback: "maas",
+  salary: "maas",
   ranking: "enzengin",
   sendmoney: "paragonder",
   slot: "slot",

@@ -1,14 +1,14 @@
 const commands = {
-  bank: "banka",
-  buy: "satinal",
-  case: "kasa",
-  centralbank: "merkezbankasi",
-  items: "esyalar",
+  bank: "bank",
+  buy: "buy",
+  case: "case",
+  centralbank: "centralbank",
+  items: "items",
   market: "market",
-  payback: "maas",
-  ranking: 'enzengin',
-  sendmoney: 'paragonder',
-  slot: 'slot'
+  salary: "salary",
+  ranking: "ranking",
+  sendmoney: "sendmoney",
+  slot: "slot",
 };
 
 module.exports = commands;
