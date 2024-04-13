@@ -13,11 +13,11 @@ npm install
 # Run with dev mode:
 
 ```bash
-BOT_TOKEN=... LANG=<en|tr> npm run dev
+TELEGRAM_BOT_TOKEN=... LANG=<en|tr> npm run dev
 ```
 
 # Run with production mode:
 
 ```bash
-BOT_TOKEN=... LANG=<en|tr> npm run start
+TELEGRAM_BOT_TOKEN=... LANG=<en|tr> npm run start
 ```
