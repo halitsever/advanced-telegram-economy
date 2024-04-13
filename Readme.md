@@ -8,7 +8,7 @@
 <br/>
 <br/>
 <img src="https://img.shields.io/github/sponsors/halitsever"/> 
-<img src="https://img.shields.io/github/license/halitsever/advanced-telegram-bot"/> 
+<img src="https://img.shields.io/github/license/halitsever/advanced-telegram-economy"/> 
 </p>
 <p align="center">
 <a align="center" href="#">Documentation</a>
