@@ -130,3 +130,5 @@ dist
 .pnp.*
 
 *.sqlite
+
+.DS_STORE
