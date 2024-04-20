@@ -61,7 +61,7 @@ const giveSalaryToUser = async ({ ctx }) => {
 
     await decreaseBankAmount({ ctx, decreaseAmont: 1 });
     await setUser({ user });
-    ctx.reply(getString("salary_OK"));
+    ctx.reply(getString("SALARY_OK"));
   } catch (err) {
     logger.error(err);
     ctx.reply(getString("DATABASE_LOCK"));
