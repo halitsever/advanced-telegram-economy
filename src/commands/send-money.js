@@ -18,7 +18,7 @@ module.exports = Composer.command(getCommandName("sendmoney"), async (ctx) => {
 
   if (isNaN(moneyAmount) || moneyAmount > user?.balance || moneyAmount <= 0) return ctx.reply(`${getString("NO_BALANCE")}`);
 
-  if (moneyAmount < (taxRate + 1)) return ctx.reply(`${getString("TAX_INFO")}`);
+  if (moneyAmount <= (taxRate + 1)) return ctx.reply(`${getString("TAX_INFO")}`);
 
   user.balance = user.balance - (moneyAmount + taxRate);
 
