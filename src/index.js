@@ -33,7 +33,7 @@ const loadScenes = async (bot) => {
   logger.info(`All scenes loaded`);
 };
 
-const bootstrap = (async () => {
+const main = async () => {
   dotenv.config();
   const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
@@ -56,4 +56,7 @@ const bootstrap = (async () => {
 
   process.once("SIGINT", () => bot.stop("SIGINT"));
   process.once("SIGTERM", () => bot.stop("SIGTERM"));
-})();
+};
+
+
+main();
