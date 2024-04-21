@@ -20,8 +20,7 @@ salaryScene.enter((ctx) => {
   ctx.session.answer = answer;
   ctx.session.timeout = captchaTimeout;
   for (const number of numbers) {
-    if (number === answer) captchaString = captchaString + `🟢 ${number}\n`;
-    else captchaString = captchaString + `🔴 ${number}\n`;
+    captchaString = number === answer ? `${captchaString}🟢 ${number}\n` : captchaString + `🔴 ${number}\n`;
   }
 
   ctx.reply(captchaString);
@@ -32,39 +31,38 @@ salaryScene.on(message("text"), async (ctx) => {
 
   const userResponse = ctx.message.text;
 
-  if (answer !== userResponse) {
-    ctx.reply(getString("CAPTCHA_RESPONSE_ERROR"));
-    clearTimeout(ctx.session.timeout);
-    return ctx.scene.leave();
-  } else {
+  if (answer === userResponse) {
     clearTimeout(ctx.session.timeout);
     await giveSalaryToUser({ ctx });
     return ctx.scene.leave();
   }
+  ctx.reply(getString("CAPTCHA_RESPONSE_ERROR"));
+  clearTimeout(ctx.session.timeout);
+  return ctx.scene.leave();
 });
 
 const giveSalaryToUser = async ({ ctx }) => {
   try {
     const bankInfo = await getBankInfo({ ctx });
 
-    if (bankInfo.balance <= 0) return ctx.reply();
+    if (bankInfo.balance <= 0) return await ctx.reply(getString("MONEY_NOT_AVAILABLE"));
 
     const user = await getUser({ id: ctx?.update?.message?.from?.id });
     const limitAsMs = 3_600_000;
 
-    if (!user) return ctx.reply(getString("DATABASE_LOCK"));
+    if (!user) return await ctx.reply(getString("DATABASE_LOCK"));
 
-    if (Date.now() - user?.last_payback_time <= limitAsMs) return ctx.reply(getString("SALARY_ERROR"));
+    if (Date.now() - user?.last_payback_time <= limitAsMs) return await ctx.reply(getString("SALARY_ERROR"));
 
     user.balance = user?.balance + 1;
     user.last_payback_time = Date.now();
 
     await decreaseBankAmount({ ctx, decreaseAmont: 1 });
     await setUser({ user });
-    ctx.reply(getString("SALARY_OK"));
+    return await ctx.reply(getString("SALARY_OK"));
   } catch (err) {
     logger.error(err);
-    ctx.reply(getString("DATABASE_LOCK"));
+    return await ctx.reply(getString("DATABASE_LOCK"));
   }
 };
 
