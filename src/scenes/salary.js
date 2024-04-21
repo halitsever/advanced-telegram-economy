@@ -45,24 +45,24 @@ const giveSalaryToUser = async ({ ctx }) => {
   try {
     const bankInfo = await getBankInfo({ ctx });
 
-    if (bankInfo.balance <= 0) return ctx.reply();
+    if (bankInfo.balance <= 0) return await ctx.reply(getString("MONEY_NOT_AVAILABLE"));
 
     const user = await getUser({ id: ctx?.update?.message?.from?.id });
     const limitAsMs = 3_600_000;
 
-    if (!user) return ctx.reply(getString("DATABASE_LOCK"));
+    if (!user) return await ctx.reply(getString("DATABASE_LOCK"));
 
-    if (Date.now() - user?.last_payback_time <= limitAsMs) return ctx.reply(getString("SALARY_ERROR"));
+    if (Date.now() - user?.last_payback_time <= limitAsMs) return await ctx.reply(getString("SALARY_ERROR"));
 
     user.balance = user?.balance + 1;
     user.last_payback_time = Date.now();
 
     await decreaseBankAmount({ ctx, decreaseAmont: 1 });
     await setUser({ user });
-    ctx.reply(getString("SALARY_OK"));
+    return await ctx.reply(getString("SALARY_OK"));
   } catch (err) {
     logger.error(err);
-    ctx.reply(getString("DATABASE_LOCK"));
+    return await ctx.reply(getString("DATABASE_LOCK"));
   }
 };
 
