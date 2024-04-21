@@ -6,6 +6,7 @@ const { getString } = require("../lang/index");
 
 const handleCaseEvent = async (ctx) => {
   const user = await getUser({ id: ctx?.update?.message?.from?.id });
+
   if (ctx?.update?.message?.from?.is_bot) return;
   if (!user) return;
 
@@ -14,7 +15,7 @@ const handleCaseEvent = async (ctx) => {
 
   const caseCount = caseStore.get();
 
-  if (caseCount >= (process.env.CASE_THRESHOLD || 50)) {
+  if (caseCount >= (parseInt(process.env.CASE_THRESHOLD) || 50)) {
     caseStore.reset();
     if (!latestUserId) return;
     user.case = true;
