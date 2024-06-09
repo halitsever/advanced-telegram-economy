@@ -1,4 +1,4 @@
-# Clonning the repository:
+# Cloning the repository:
 
 ```bash
 git clone https://github.com/halitsever/advanced-telegram-economy.git
