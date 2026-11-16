@@ -13,7 +13,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "logmoji": "^1.0.4",
-    "nodemon": "^3.1.0",
+    "nodemon": "^3.1.14",
     "sqlite3": "^6.0.1",
     "telegraf": "^4.16.3",
     "typeorm": "^0.3.20"
