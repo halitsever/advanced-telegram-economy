@@ -13,7 +13,7 @@ Advanced Telegram Economy is a self-hosted Telegram economy bot (Telegraf, TypeO
 - Every file in `src/commands/` and `src/scenes/` is required at startup. Put helpers elsewhere.
 - Command names and user-facing strings come from `src/lang/` (`commands.en.js`, `commands.tr.js`, `strings.en.js`, `strings.tr.js`). Add every new key in both languages.
 - TypeORM runs with `synchronize: true` against `data.sqlite` in the working directory, so entity changes alter the live database schema on the next start. `*.sqlite` is gitignored.
-- Every push to `main` builds the Docker image (amd64 only) and pushes it to `registry.netaster.com/halitsever/advanced-telegram-economy:1.0.0`, overwriting that fixed tag.
+- There is no image registry or Docker publish workflow. `docker compose up -d --build` builds the image locally from the `Dockerfile`.
 - `docs/.vitepress/cache` is committed. Leave cache changes from local docs builds out of your commits.
 - `nodemon` is a runtime dependency because `npm run dev` uses it.
 
