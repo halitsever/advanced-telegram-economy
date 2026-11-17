@@ -2,7 +2,7 @@
 
 > Advanced Telegram Economy is a self-hosted Telegram economy bot for Node.js, built with Telegraf, TypeORM and SQLite. It adds salaries, a central bank, a market, cases, slots, money transfers and rankings to Telegram chats, in English or Turkish.
 
-Run it from a clone with `npm install`, then `TELEGRAM_BOT_TOKEN=... LANG=en npm run start`. Set `LANG=tr` for Turkish; any other value gives English. Data is stored in `data.sqlite` in the working directory.
+Run it from a clone with `npm install`, then `TELEGRAM_BOT_TOKEN=... LANG=en npm run start`. Set `LANG=tr` (or a Turkish locale such as `tr_TR.UTF-8`) for Turkish; any other language gives English. Data is stored in `data.sqlite` in the working directory.
 
 ## Docs
 

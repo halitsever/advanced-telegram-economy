@@ -9,7 +9,7 @@ Advanced Telegram Economy is a self-hosted Telegram economy bot (Telegraf, TypeO
 
 ## Gotchas
 
-- `LANG` selects the bot language and is the same variable as the shell locale. Only the exact value `tr` gives Turkish; anything else, including `en_US.UTF-8`, falls back to English.
+- `LANG` selects the bot language and is the same variable as the shell locale. Only its language prefix is used (`tr_TR.UTF-8` gives Turkish), and an unsupported or missing language falls back to English. Resolve the language with `getLanguage()` from `src/lang/index.js` instead of reading `process.env.LANG`.
 - Every file in `src/commands/` and `src/scenes/` is required at startup. Put helpers elsewhere.
 - Command names and user-facing strings come from `src/lang/` (`commands.en.js`, `commands.tr.js`, `strings.en.js`, `strings.tr.js`). Add every new key in both languages.
 - TypeORM runs with `synchronize: true` against `data.sqlite` in the working directory, so entity changes alter the live database schema on the next start. `*.sqlite` is gitignored.
