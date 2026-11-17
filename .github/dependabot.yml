@@ -14,10 +14,6 @@ updates:
       npm-major:
         patterns: ["*"]
         update-types: [major]
-    ignore:
-      # typeorm 1 drops the sqlite3 driver the bot uses, so it needs a move to better-sqlite3 first.
-      - dependency-name: typeorm
-        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: docker
     directory: /

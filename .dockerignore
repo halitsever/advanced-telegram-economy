@@ -1,0 +1,3 @@
+# Host builds of native modules like better-sqlite3 do not load on musl.
+node_modules
+*.sqlite
