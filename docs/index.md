@@ -1,5 +1,7 @@
 ---
 layout: home
+title: Advanced Telegram Economy
+titleTemplate: Self-hosted Telegram economy bot
 
 hero:
   name: "Advanced"

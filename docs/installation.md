@@ -1,3 +1,8 @@
+---
+title: Installation
+description: "Install and run the Advanced Telegram Economy bot: clone the repository, install dependencies and start it with your Telegram bot token."
+---
+
 # Cloning the repository:
 
 ```bash
