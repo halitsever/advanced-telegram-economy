@@ -14,6 +14,10 @@ updates:
       npm-major:
         patterns: ["*"]
         update-types: [major]
+    ignore:
+      # typeorm 1.x peer-depends on better-sqlite3 ^12, so a 13.x bump cannot install.
+      - dependency-name: better-sqlite3
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: docker
     directory: /
