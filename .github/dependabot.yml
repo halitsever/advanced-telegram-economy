@@ -15,8 +15,8 @@ updates:
         patterns: ["*"]
         update-types: [major]
     ignore:
-      # typeorm 1 drops the sqlite3 driver the bot uses, so it needs a move to better-sqlite3 first.
-      - dependency-name: typeorm
+      # typeorm 1.x peer-depends on better-sqlite3 ^12, so a 13.x bump cannot install.
+      - dependency-name: better-sqlite3
         update-types: ["version-update:semver-major"]
 
   - package-ecosystem: docker
