@@ -3,7 +3,7 @@ version: "3.9"
 services:
   server:
     user: root 
-    image: registry.netaster.com/halitsever/advanced-telegram-economy:1.0.0
+    build: .
     environment:
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
       - LANG=${LANG}
