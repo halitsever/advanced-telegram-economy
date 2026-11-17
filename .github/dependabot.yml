@@ -36,7 +36,7 @@ updates:
     ignore:
       # Odd Node majors never become LTS, so the base image stays on even lines.
       - dependency-name: node
-        versions: ["23.x", "25.x", "27.x", "29.x"]
+        versions: [">= 23, < 24", ">= 25, < 26", ">= 27, < 28", ">= 29, < 30"]
 
   - package-ecosystem: github-actions
     directory: /
