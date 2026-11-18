@@ -3,20 +3,37 @@ import { defineConfig } from 'vitepress'
 const siteUrl = 'https://halitsever.github.io/advanced-telegram-economy/'
 const description = 'Self-hosted Telegram economy bot for Node.js, built with Telegraf. Salaries, a central bank, a market, gambling and rankings, in English or Turkish.'
 
+const repoUrl = 'https://github.com/halitsever/advanced-telegram-economy'
+const license = 'https://opensource.org/licenses/MIT'
+const author = { '@type': 'Person', name: 'Halit Sever', url: 'https://github.com/halitsever' }
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'Advanced Telegram Economy',
-  description,
-  url: siteUrl,
-  image: `${siteUrl}og.png`,
-  applicationCategory: 'CommunicationApplication',
-  operatingSystem: 'Any OS with Node.js',
-  codeRepository: 'https://github.com/halitsever/advanced-telegram-economy',
-  programmingLanguage: 'JavaScript',
-  license: 'https://opensource.org/licenses/MIT',
-  author: { '@type': 'Person', name: 'Halit Sever', url: 'https://github.com/halitsever' },
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+  '@graph': [
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${siteUrl}#app`,
+      name: 'Advanced Telegram Economy',
+      description,
+      url: siteUrl,
+      image: `${siteUrl}og.png`,
+      applicationCategory: 'CommunicationApplication',
+      operatingSystem: 'Any OS with Node.js',
+      license,
+      author,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
+    },
+    {
+      '@type': 'SoftwareSourceCode',
+      '@id': `${siteUrl}#source`,
+      name: 'Advanced Telegram Economy',
+      codeRepository: repoUrl,
+      programmingLanguage: 'JavaScript',
+      license,
+      author,
+      targetProduct: { '@id': `${siteUrl}#app` }
+    }
+  ]
 }
 
 // https://vitepress.dev/reference/site-config
@@ -53,7 +70,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Installation', link: '/installation' }
     ],
-    logo: '/bot-logo.png',
+    logo: { src: '/bot-logo.png', alt: 'Advanced Telegram Economy logo' },
 
     sidebar: [
       {
@@ -65,7 +82,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/halitsever/advanced-telegram-economy' }
+      { icon: 'github', link: repoUrl }
     ]
   }
 })
