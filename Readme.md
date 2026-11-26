@@ -4,7 +4,7 @@
 <img src="https://halitsever-api.vercel.app/api/repo-title?title=Advanced%20Telegram%20Economy">
 
 <p align="center">
-⚙️ Self-hosted Telegram economy bot for Node.js, built with Telegraf (telegraf.js). Salaries, a central bank, a market, gambling and rankings for your Telegram chats, in English or Turkish.<br>
+Self-hosted Telegram economy bot for Node.js, built with Telegraf (telegraf.js). Salaries, a central bank, a market, gambling and rankings for your Telegram chats, in English or Turkish.<br>
 <br/>
 <br/>
 <img src="https://img.shields.io/github/sponsors/halitsever" alt="GitHub sponsors"/> 
@@ -19,13 +19,13 @@
 <img src="https://halitsever-api.vercel.app/api/details"/>
 </a>
 
-- 📈 [**Auto salary**](#) - User based salary with captcha secure
-- 🏦 [**Central bank**](#) - Dynamic central bank
-- 🧑‍💻 [**Market**](#) - Market with buyable items
-- 📈 [**And more crazy stuff**](#) - Gambling, random events, ranking
+- [**Auto salary**](#) - User based salary with captcha secure
+- [**Central bank**](#) - Dynamic central bank
+- [**Market**](#) - Market with buyable items
+- [**And more crazy stuff**](#) - Gambling, random events, ranking
 - [**English and Turkish**](#) - Pick the bot language with the `LANG` variable
 - [**SQLite storage**](#) - Bot data lives in a local SQLite file through TypeORM
-- 🆙 <del>[**TODO**](#) - Help command and more clear usage informations</del>
+- <del>[**TODO**](#) - Help command and more clear usage informations</del>
 
 <a align="center" >
 <img src="https://halitsever-api.vercel.app/api/installation"/>
