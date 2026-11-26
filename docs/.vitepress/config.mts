@@ -42,6 +42,8 @@ export default defineConfig({
   title: "Advanced Telegram Economy",
   description,
   head: [
+    /** Cloudflare Web Analytics, one token for every page on halitsever.github.io. */
+    ['script', { defer: '', src: 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "dd7e54d3f48841c187d72d9dbb92a6b6"}' }],
     ['link', { rel: 'icon', href: '/bot-logo.png' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'Advanced Telegram Economy' }],
