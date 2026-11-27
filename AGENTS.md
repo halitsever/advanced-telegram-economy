@@ -19,7 +19,7 @@ Advanced Telegram Economy is a self-hosted Telegram economy bot (Telegraf, TypeO
 
 ## Docs and site
 
-- VitePress source in `docs/`, deployed to https://halitsever.github.io/advanced-telegram-economy/ by `.github/workflows/docs.yaml` on every push to `main`.
+- VitePress source in `docs/`, deployed to https://projects.halit.org/advanced-telegram-economy/ by `.github/workflows/docs.yaml` on every push to `main`.
 - `cleanUrls` is off, so page URLs end in `.html`. Static files, including `llms.txt`, `og.png` and `robots.txt`, live in `docs/public/`. Add new pages to `docs/public/llms.txt` too.
 
 ## Conventions

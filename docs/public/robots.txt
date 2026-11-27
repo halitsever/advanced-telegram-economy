@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://halitsever.github.io/advanced-telegram-economy/sitemap.xml
+Sitemap: https://projects.halit.org/advanced-telegram-economy/sitemap.xml
