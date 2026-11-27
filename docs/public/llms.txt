@@ -6,8 +6,8 @@ Run it from a clone with `npm install`, then `TELEGRAM_BOT_TOKEN=... LANG=en npm
 
 ## Docs
 
-- [Home](https://halitsever.github.io/advanced-telegram-economy/): overview of the bot's main features
-- [Installation](https://halitsever.github.io/advanced-telegram-economy/installation.html): cloning the repository, installing dependencies and running the bot in dev or production mode
+- [Home](https://projects.halit.org/advanced-telegram-economy/): overview of the bot's main features
+- [Installation](https://projects.halit.org/advanced-telegram-economy/installation.html): cloning the repository, installing dependencies and running the bot in dev or production mode
 
 ## Optional
 

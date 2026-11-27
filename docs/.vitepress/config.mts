@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
 
 const base = "/advanced-telegram-economy/";
-const siteUrl = `https://halitsever.github.io${base}`;
+const siteUrl = `https://projects.halit.org${base}`;
 const description = "Self-hosted Telegram economy bot for Node.js, built with Telegraf. Salaries, a central bank, a market, gambling and rankings, in English or Turkish.";
 
 const repoUrl = "https://github.com/halitsever/advanced-telegram-economy";
@@ -34,7 +34,7 @@ export default defineConfig({
   title: "Advanced Telegram Economy",
   description,
   head: [
-    /** Cloudflare Web Analytics, one token for every page on halitsever.github.io. */
+    /** Cloudflare Web Analytics, one token for every page on projects.halit.org. */
     ["script", { defer: "", src: "https://static.cloudflareinsights.com/beacon.min.js", "data-cf-beacon": '{"token": "dd7e54d3f48841c187d72d9dbb92a6b6"}' }],
     ["link", { rel: "icon", type: "image/png", href: `${base}bot-logo.png` }],
     ["meta", { property: "og:type", content: "website" }],
