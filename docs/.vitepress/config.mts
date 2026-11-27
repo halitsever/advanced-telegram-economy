@@ -11,27 +11,16 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'SoftwareApplication',
-      '@id': `${siteUrl}#app`,
+      '@type': 'SoftwareSourceCode',
+      '@id': `${siteUrl}#source`,
       name: 'Advanced Telegram Economy',
       description,
       url: siteUrl,
       image: `${siteUrl}og.png`,
-      applicationCategory: 'CommunicationApplication',
-      operatingSystem: 'Any OS with Node.js',
-      license,
-      author,
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
-    },
-    {
-      '@type': 'SoftwareSourceCode',
-      '@id': `${siteUrl}#source`,
-      name: 'Advanced Telegram Economy',
       codeRepository: repoUrl,
       programmingLanguage: 'JavaScript',
       license,
-      author,
-      targetProduct: { '@id': `${siteUrl}#app` }
+      author
     }
   ]
 }
