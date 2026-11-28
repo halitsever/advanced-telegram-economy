@@ -21,13 +21,13 @@ The bot never imports better-sqlite3 directly. It goes through TypeORM, which su
 ```js
 const dataSource = new typeorm.DataSource({
   type: "better-sqlite3",
-  database: "data.sqlite",
+  database: process.env.DATABASE_PATH || "data.sqlite",
   synchronize: true,
   entities: [require("./entity/user.entitiy"), require("./entity/product.entity"), require("./entity/coupon.entity")],
 });
 ```
 
-`database: "data.sqlite"` is a path relative to the working directory, so the file appears wherever you start the bot. `synchronize: true` makes TypeORM create and alter tables to match the entities on every start. That is convenient for a hobby bot and risky for data you care about, because a renamed column can be dropped.
+Without `DATABASE_PATH`, `data.sqlite` is a path relative to the working directory, so the file appears wherever you start the bot. `synchronize: true` makes TypeORM create and alter tables to match the entities on every start. That is convenient for a hobby bot and risky for data you care about, because a renamed column can be dropped.
 
 The lockfile pins better-sqlite3 12.11.1. On npm the current release on 28 November 2026 is 13.2.0, which declares `node >= 22`.
 
@@ -81,10 +81,10 @@ On glibc systems the same mismatch usually reads `was compiled against a differe
 
 The repository's Dockerfile uses `node:22-alpine` and runs `npm install` inside the image, which is right: the addon is built for the image's Node.js and C library. In our run the install found a prebuilt binary for Alpine and needed no compiler.
 
-Two details in the repository need care, though:
+Two details need care in any setup like this:
 
-- There is no `.dockerignore`, and the Dockerfile copies the whole folder. A `node_modules` built on your Mac would be copied into the image before `npm install` runs. Add a `.dockerignore` with `node_modules` in it.
-- `docker-compose.yml` mounts `/data-telegram-bot` onto `/app/data.sqlite`. If that host path does not exist, Docker creates it as a folder, and the database path inside the container becomes a folder too. We mounted an empty folder there and better-sqlite3 failed with `SQLITE_CANTOPEN: unable to open database file`. Mount a folder onto a folder instead and point `database` at a file inside it.
+- The Dockerfile copies the whole folder. Without a `.dockerignore` listing `node_modules`, a `node_modules` built on your Mac would be copied into the image before `npm install` runs. The repository has one.
+- Mount a folder, not a file. If a file mount's host path does not exist, Docker creates it as a folder, and the database path inside the container becomes a folder too. We tried that with an older compose file and better-sqlite3 failed with `SQLITE_CANTOPEN: unable to open database file`. `docker-compose.yml` now mounts `/data-telegram-bot` at `/app/data` and sets `DATABASE_PATH=/app/data/data.sqlite`.
 
 ## When SQLite is the wrong choice
 

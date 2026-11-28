@@ -71,7 +71,7 @@ The timeout is how long a connection waits for the lock before throwing. Raising
 
 ## What this bot calls a lock
 
-Advanced Telegram Economy has a string named `DATABASE_LOCK`, but it is a general error message ("An error occurred. Please try again.") rather than an SQLite lock. Reading [src/modules/user.module.js](https://github.com/halitsever/advanced-telegram-economy/blob/main/src/modules/user.module.js) shows one reason a user may see it: `getUser` creates a missing user and then returns the old empty result, so commands such as the salary scene reply with that error the first time a new user tries them. A second try finds the user. That is a bug in the bot, not SQLite. The same check sits in the case, buy and send money commands, which the [game bot post](/blog/telegram-game-bot) describes.
+Advanced Telegram Economy has a string named `DATABASE_LOCK`, but it is a general error message ("An error occurred. Please try again.") rather than an SQLite lock. Commands send it when a database call fails or returns nothing. [src/modules/user.module.js](https://github.com/halitsever/advanced-telegram-economy/blob/main/src/modules/user.module.js) creates a missing user and returns the new record in the same call, so a member's first command works. If you see the message often, read the bot's log for the real error before you blame a lock.
 
 ## Checklist
 

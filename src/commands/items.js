@@ -1,17 +1,15 @@
 const { Composer } = require("telegraf");
 const { getUserProduct } = require("../modules/product.module");
 const products = require("../products");
-const { getCommandName } = require("../lang");
+const { getString, getCommandName, getLanguage } = require("../lang");
+
+/** Owned rows store the product code, so look up the name shown in the market. */
+const productName = (code) => products.find((product) => product.code === code)?.name[getLanguage()] ?? code;
 
 module.exports = Composer.command(getCommandName("items"), async (ctx) => {
-  let productString = "";
-  const products = await getUserProduct({
+  const owned = await getUserProduct({
     id: ctx?.update?.message?.from?.id,
   });
-  if (!products) return ctx.reply(strings.DATABASE_LOCK);
-  // TODO: This not returning the original names of the product
-  products.forEach((el) => {
-    productString = productString + `✅ ${el.product}\n`;
-  });
-  return ctx.reply(productString);
+  if (!owned.length) return ctx.reply(getString("ITEMS_EMPTY"));
+  return ctx.reply(owned.map((el) => `✅ ${productName(el.product)}`).join("\n"));
 });

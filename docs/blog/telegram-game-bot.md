@@ -37,8 +37,7 @@ Everything starts with one balance: the bot's own account. The bank module store
 
 ```js
 const getBankInfo = async ({ ctx }) => {
-  const bankInfo = await getUser({ id: ctx?.botInfo.id });
-  return bankInfo;
+  return await getUser({ id: ctx?.botInfo?.id });
 };
 ```
 
@@ -71,7 +70,7 @@ By default the bot deletes links, photos, stickers and a list of Turkish swear w
 
 ## Trading: transfers with tax
 
-Reply to someone's message with `/sendmoney <amount>`. The amount must be more than 2. As the code stands, the sender pays the amount plus 1, the receiver gets the amount minus 1 and the bank gets 1, so one unit disappears with every transfer, and the bot's tax message still says half goes to tax. Both are open bugs. Reading the receiver from the replied-to message means nobody has to type user ids.
+Reply to someone's message with `/sendmoney <amount>`. The amount must be more than 2. The tax comes out of the amount: the sender pays the amount, the receiver gets the amount minus 1 and the bank gets 1, so no money is created or lost. Reading the receiver from the replied-to message means nobody has to type user ids.
 
 ## Competition: the ranking
 

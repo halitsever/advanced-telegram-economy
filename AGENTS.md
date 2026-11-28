@@ -4,7 +4,7 @@ Advanced Telegram Economy is a self-hosted Telegram economy bot (Telegraf, TypeO
 
 ## Verify a change
 
-- CI (Node 22) only runs `npm ci` and `npm run docs:build`. There are no tests or linters, so check bot changes by running it against a test bot: `TELEGRAM_BOT_TOKEN=... LANG=en npm run dev`.
+- CI (Node 22) runs `npm ci`, `npm test` and `npm run docs:build`. `npm test` uses `node:test` with an in-memory database and a recorded Telegram API (`test/helpers.js`), so it needs no token. Check behaviour Telegram decides (permissions, message edits) against a test bot: `TELEGRAM_BOT_TOKEN=... LANG=en npm run dev`.
 - Format the files you touch with `npx prettier --write <files>`. `npm run prettier` rewrites the whole repo, and a few files (including `src/index.js`) are not formatted yet.
 
 ## Gotchas
@@ -12,7 +12,7 @@ Advanced Telegram Economy is a self-hosted Telegram economy bot (Telegraf, TypeO
 - `LANG` selects the bot language and is the same variable as the shell locale. Only its language prefix is used (`tr_TR.UTF-8` gives Turkish), and an unsupported or missing language falls back to English. Resolve the language with `getLanguage()` from `src/lang/index.js` instead of reading `process.env.LANG`.
 - Every file in `src/commands/` and `src/scenes/` is required at startup. Put helpers elsewhere.
 - Command names and user-facing strings come from `src/lang/` (`commands.en.js`, `commands.tr.js`, `strings.en.js`, `strings.tr.js`). Add every new key in both languages.
-- TypeORM runs with `synchronize: true` against `data.sqlite` in the working directory, so entity changes alter the live database schema on the next start. `*.sqlite` is gitignored.
+- TypeORM runs with `synchronize: true` against `DATABASE_PATH` (default `data.sqlite` in the working directory; `/app/data/data.sqlite` in Docker), so entity changes alter the live database schema on the next start. `*.sqlite` is gitignored.
 - There is no image registry or Docker publish workflow. `docker compose up -d --build` builds the image locally from the `Dockerfile`.
 - `docs/.vitepress/cache` is committed. Leave cache changes from local docs builds out of your commits.
 - `nodemon` is a runtime dependency because `npm run dev` uses it.

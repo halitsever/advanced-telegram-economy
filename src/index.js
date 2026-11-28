@@ -37,6 +37,9 @@ const main = async () => {
   dotenv.config();
   const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
+  // Telegraf's default handler rethrows, which stops polling for every chat.
+  bot.catch((err) => logger.error(err));
+
   bot.use(session());
 
   await loadScenes(bot);

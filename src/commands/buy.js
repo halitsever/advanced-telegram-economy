@@ -15,7 +15,7 @@ module.exports = Composer.command(getCommandName("buy"), async (ctx) => {
     const user = await getUser({ id: ctx?.update?.message?.from?.id });
     if (!user) return ctx.reply(getString("DATABASE_LOCK"));
 
-    if (!option) return ctx.reply("🔴 Girdiğiniz ürün idsi geçerli değil!");
+    if (!option) return ctx.reply(getString("INVALID_PRODUCT_ID"));
     let selectedProduct;
     for (let [index, product] of products.entries()) {
       if (index + 1 == option) selectedProduct = product;
