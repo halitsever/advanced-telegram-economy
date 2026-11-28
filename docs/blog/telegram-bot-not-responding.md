@@ -108,4 +108,5 @@ The incoming message has a reply_to_message field. In Telegraf it is ctx.message
 - [Make a Telegram bot in Node.js with Telegraf, step by step](/blog/how-to-make-a-telegram-bot)
 - [Get a Telegram bot token from BotFather and keep it safe](/blog/telegram-bot-token)
 - [Telegram bots: webhook or long polling?](/blog/telegram-bot-webhook-vs-polling)
+- [Finding a Telegram chat ID for private chats, groups and channels](/blog/telegram-chat-id)
 - [All posts](/blog/)

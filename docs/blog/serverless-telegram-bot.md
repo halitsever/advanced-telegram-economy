@@ -91,4 +91,5 @@ Any machine that can run Node.js 22 and keep a file on disk, such as a small VPS
 - [Make a Telegram bot in Node.js with Telegraf, step by step](/blog/how-to-make-a-telegram-bot)
 - [Why a Telegram bot does not respond, and how to fix it](/blog/telegram-bot-not-responding)
 - [Telegram bots: webhook or long polling?](/blog/telegram-bot-webhook-vs-polling)
+- [Why SQLite says database is locked, and how WAL and timeouts help](/blog/sqlite-database-is-locked)
 - [All posts](/blog/)

@@ -149,4 +149,6 @@ Creating a bot with BotFather and using the Bot API costs nothing. You only pay 
 - [Get a Telegram bot token from BotFather and keep it safe](/blog/telegram-bot-token)
 - [Telegram Bot API sendMessage, explained with Node.js examples](/blog/telegram-bot-api-sendmessage)
 - [Telegram bots: webhook or long polling?](/blog/telegram-bot-webhook-vs-polling)
+- [Using better-sqlite3 in a Node.js bot, and fixing its install errors](/blog/better-sqlite3)
+- [Nodemon for a Telegram bot: restarts, crashes and node --watch](/blog/nodemon)
 - [All posts](/blog/)

@@ -3,7 +3,7 @@ title: Installation
 description: "Install and run the Advanced Telegram Economy bot: clone the repository, install dependencies and start it with your Telegram bot token."
 ---
 
-# Installation
+# Install and run the bot with Node.js or Docker
 
 This guide takes you from a fresh clone to a bot that answers commands in your Telegram group. You can run it directly with Node.js or build a Docker image from the included `Dockerfile`.
 
