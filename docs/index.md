@@ -57,4 +57,13 @@ It suits community groups that want a light game layer, or anyone who wants a wo
 | `/sendmoney`   | `/paragonder`    | Sends money to the user you reply to |
 | `/ranking`     | `/enzengin`      | Shows the 10 richest members         |
 
-Ready to run it? Follow the [installation guide](/installation).
+Ready to run it? Follow the [installation guide](/installation). For a short tour of the game for group admins, see the [self-hosted Telegram gaming bot](/telegram-gaming-bot/) page.
+
+## Guides
+
+The [blog](/blog/) has Telegram bot guides that use this bot's code as the example:
+
+- [How to make a Telegram bot with Node.js](/blog/how-to-make-a-telegram-bot)
+- [How to get a Telegram bot token from BotFather](/blog/telegram-bot-token)
+- [Telegram bot not responding? Common fixes](/blog/telegram-bot-not-responding)
+- [Webhook vs long polling for Telegram bots](/blog/telegram-bot-webhook-vs-polling)
