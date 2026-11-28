@@ -1,7 +1,7 @@
 ---
 title: "Telegram Bot Guides for Node.js Developers"
 titleTemplate: false
-description: "Guides to building Telegram bots in Node.js: BotFather tokens, Telegraf, sendMessage, webhooks vs polling, serverless hosting and fixing a silent bot."
+description: "Telegram bot guides for Node.js: tokens, commands, chat IDs, anti-spam, Telegraf, webhooks, better-sqlite3, database locks and nodemon."
 ---
 
 # Telegram bot guides
@@ -39,3 +39,27 @@ What is a Telegram bot? A program that uses the Bot API to answer messages, run 
 ## [Serverless Telegram bots: what works and what does not](/blog/serverless-telegram-bot)
 
 Can a Telegram bot run serverless? Yes, with a webhook and external storage. Why a bot that keeps SQLite and in-memory state needs a small always-on server.
+
+## [Using better-sqlite3 in a Node.js bot, and fixing its install errors](/blog/better-sqlite3)
+
+better-sqlite3 for Node.js: install, prepare and run, WAL mode, TypeORM's better-sqlite3 driver, and fixes for bindings file and Node upgrade errors.
+
+## [Why SQLite says database is locked, and how WAL and timeouts help](/blog/sqlite-database-is-locked)
+
+Fix SQLite database is locked (SQLITE_BUSY) in Node.js: what holds the lock, busy timeouts, WAL mode, short transactions and one writer per file.
+
+## [Nodemon for a Telegram bot: restarts, crashes and node --watch](/blog/nodemon)
+
+What nodemon does and how to use it: npm run dev, watched extensions, ignore rules, the app crashed message, rs restarts and the node --watch alternative.
+
+## [Finding a Telegram chat ID for private chats, groups and channels](/blog/telegram-chat-id)
+
+Find a Telegram chat ID with getUpdates or a bot: private chats, groups, supergroups and channels, why group IDs are negative, and using @username.
+
+## [Telegram bot commands: rules, the / menu and per-language lists](/blog/telegram-bot-commands)
+
+Telegram bot commands explained: naming rules, setMyCommands and BotFather, scopes for groups and admins, language lists, and handling /cmd@bot in Telegraf.
+
+## [A self-hosted anti-spam filter for Telegram groups, in Node.js](/blog/telegram-anti-spam-bot)
+
+How a Telegram anti spam bot works: admin rights, privacy mode, deleteMessage limits, link, sticker and word filters, and paid exceptions in an open source bot.

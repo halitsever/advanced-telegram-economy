@@ -9,7 +9,7 @@ Run it from a clone with `npm install`, then `TELEGRAM_BOT_TOKEN=... LANG=en npm
 - [Home](https://projects.halit.org/advanced-telegram-economy/): overview of the bot's main features
 - [Installation](https://projects.halit.org/advanced-telegram-economy/installation.html): cloning the repository, installing dependencies and running the bot in dev or production mode
 - [Telegram gaming bot](https://projects.halit.org/advanced-telegram-economy/telegram-gaming-bot/): what the economy game gives a group, every command in English and Turkish, three-step setup
-- [Blog](https://projects.halit.org/advanced-telegram-economy/blog/): Telegram bot guides for Node.js developers
+- [Blog](https://projects.halit.org/advanced-telegram-economy/blog/): Telegram bot guides for Node.js developers, including commands, chat IDs, anti-spam, better-sqlite3 and nodemon
 
 ## Blog
 
@@ -21,6 +21,12 @@ Run it from a clone with `npm install`, then `TELEGRAM_BOT_TOKEN=... LANG=en npm
 - [How a Telegram game bot runs an economy inside a group](https://projects.halit.org/advanced-telegram-economy/blog/telegram-game-bot.html): How a Telegram game bot can run an economy game in a group chat: salaries with a captcha, a central bank, a market, crates and rankings, explained from code.
 - [What a Telegram bot is and how it works](https://projects.halit.org/advanced-telegram-economy/blog/what-is-a-telegram-bot.html): What is a Telegram bot? A program that uses the Bot API to answer messages, run commands and manage groups. How bots work, what they can do and their limits.
 - [Serverless Telegram bots: what works and what does not](https://projects.halit.org/advanced-telegram-economy/blog/serverless-telegram-bot.html): Can a Telegram bot run serverless? Yes, with a webhook and external storage. Why a bot that keeps SQLite and in-memory state needs a small always-on server.
+- [Using better-sqlite3 in a Node.js bot, and fixing its install errors](https://projects.halit.org/advanced-telegram-economy/blog/better-sqlite3.html): better-sqlite3 for Node.js: install, prepare and run, WAL mode, TypeORM's better-sqlite3 driver, and fixes for bindings file and Node upgrade errors.
+- [Why SQLite says database is locked, and how WAL and timeouts help](https://projects.halit.org/advanced-telegram-economy/blog/sqlite-database-is-locked.html): Fix SQLite database is locked (SQLITE_BUSY) in Node.js: what holds the lock, busy timeouts, WAL mode, short transactions and one writer per file.
+- [Nodemon for a Telegram bot: restarts, crashes and node --watch](https://projects.halit.org/advanced-telegram-economy/blog/nodemon.html): What nodemon does and how to use it: npm run dev, watched extensions, ignore rules, the app crashed message, rs restarts and the node --watch alternative.
+- [Finding a Telegram chat ID for private chats, groups and channels](https://projects.halit.org/advanced-telegram-economy/blog/telegram-chat-id.html): Find a Telegram chat ID with getUpdates or a bot: private chats, groups, supergroups and channels, why group IDs are negative, and using @username.
+- [Telegram bot commands: rules, the / menu and per-language lists](https://projects.halit.org/advanced-telegram-economy/blog/telegram-bot-commands.html): Telegram bot commands explained: naming rules, setMyCommands and BotFather, scopes for groups and admins, language lists, and handling /cmd@bot in Telegraf.
+- [A self-hosted anti-spam filter for Telegram groups, in Node.js](https://projects.halit.org/advanced-telegram-economy/blog/telegram-anti-spam-bot.html): How a Telegram anti spam bot works: admin rights, privacy mode, deleteMessage limits, link, sticker and word filters, and paid exceptions in an open source bot.
 
 ## Optional
 

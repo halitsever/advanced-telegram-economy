@@ -126,6 +126,12 @@ export default defineConfig({
             { text: "Game bots", link: "/blog/telegram-game-bot" },
             { text: "What is a Telegram bot", link: "/blog/what-is-a-telegram-bot" },
             { text: "Serverless bots", link: "/blog/serverless-telegram-bot" },
+            { text: "better-sqlite3", link: "/blog/better-sqlite3" },
+            { text: "Database is locked", link: "/blog/sqlite-database-is-locked" },
+            { text: "nodemon", link: "/blog/nodemon" },
+            { text: "Find a chat ID", link: "/blog/telegram-chat-id" },
+            { text: "Bot commands", link: "/blog/telegram-bot-commands" },
+            { text: "Anti-spam filter", link: "/blog/telegram-anti-spam-bot" },
           ],
         },
         {

@@ -71,7 +71,7 @@ By default the bot deletes links, photos, stickers and a list of Turkish swear w
 
 ## Trading: transfers with tax
 
-Reply to someone's message with `/sendmoney <amount>`. The amount must be more than 2. One unit goes to the bank as tax. Reading the receiver from the replied-to message means nobody has to type user ids.
+Reply to someone's message with `/sendmoney <amount>`. The amount must be more than 2. As the code stands, the sender pays the amount plus 1, the receiver gets the amount minus 1 and the bank gets 1, so one unit disappears with every transfer, and the bot's tax message still says half goes to tax. Both are open bugs. Reading the receiver from the replied-to message means nobody has to type user ids.
 
 ## Competition: the ranking
 
@@ -104,4 +104,6 @@ In data.sqlite in the directory the bot is started from, through TypeORM. Back u
 - [Make a Telegram bot in Node.js with Telegraf, step by step](/blog/how-to-make-a-telegram-bot)
 - [Telegram Bot API sendMessage, explained with Node.js examples](/blog/telegram-bot-api-sendmessage)
 - [What a Telegram bot is and how it works](/blog/what-is-a-telegram-bot)
+- [A self-hosted anti-spam filter for Telegram groups, in Node.js](/blog/telegram-anti-spam-bot)
+- [Telegram bot commands: rules, the / menu and per-language lists](/blog/telegram-bot-commands)
 - [All posts](/blog/)

@@ -139,4 +139,5 @@ Telegram's Bot FAQ says to avoid more than one message per second in a single ch
 - [Make a Telegram bot in Node.js with Telegraf, step by step](/blog/how-to-make-a-telegram-bot)
 - [Why a Telegram bot does not respond, and how to fix it](/blog/telegram-bot-not-responding)
 - [How a Telegram game bot runs an economy inside a group](/blog/telegram-game-bot)
+- [Finding a Telegram chat ID for private chats, groups and channels](/blog/telegram-chat-id)
 - [All posts](/blog/)
