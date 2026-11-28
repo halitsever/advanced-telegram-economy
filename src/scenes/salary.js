@@ -45,6 +45,7 @@ const giveSalaryToUser = async ({ ctx }) => {
   try {
     const bankInfo = await getBankInfo({ ctx });
 
+    if (!bankInfo) return await ctx.reply(getString("DATABASE_LOCK"));
     if (bankInfo.balance <= 0) return await ctx.reply(getString("MONEY_NOT_AVAILABLE"));
 
     const user = await getUser({ id: ctx?.update?.message?.from?.id });

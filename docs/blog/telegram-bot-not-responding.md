@@ -70,7 +70,7 @@ This bot renames its commands with the language. With `LANG=tr`, or a Turkish sh
 
 Some replies look like failures but are the bot's own rules:
 
-- **An error occurred. Please try again.** The bot sends this when a database read fails, including the first command from someone who has no account record yet. The record is created on that first call, so the second try works.
+- **An error occurred. Please try again.** The bot sends this when a database read or write fails. The real error is in the bot's log.
 - **Salary cannot be deposited.** The central bank reserve is empty. Salaries are paid out of it, and it refills from market purchases, slot losses, transfer tax and money crates. Check it with `/centralbank`.
 - **No answer to /salary.** The captcha waits 10 seconds for the green number. A late or wrong answer ends the scene.
 

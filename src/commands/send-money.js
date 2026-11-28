@@ -12,15 +12,16 @@ module.exports = Composer.command(getCommandName("sendmoney"), async (ctx) => {
 
   const user = await getUser({ id: ctx?.update?.message?.from?.id });
 
-  if (user.id === targetUser.id) return ctx.reply(`${getString("SELF_SEND")}`);
-
   if (!user) return ctx.reply(`${getString("DATABASE_LOCK")}`);
+
+  if (user.id === targetUser.id) return ctx.reply(`${getString("SELF_SEND")}`);
 
   if (isNaN(moneyAmount) || moneyAmount > user?.balance || moneyAmount <= 0) return ctx.reply(`${getString("NO_BALANCE")}`);
 
-  if (moneyAmount <= (taxRate + 1)) return ctx.reply(`${getString("TAX_INFO")}`);
+  if (moneyAmount <= taxRate + 1) return ctx.reply(`${getString("TAX_INFO")}`);
 
-  user.balance = user.balance - (moneyAmount + taxRate);
+  // The tax comes out of the amount: the sender pays the amount, the receiver gets it minus the tax.
+  user.balance = user.balance - moneyAmount;
 
   await setUser({ user });
 
@@ -30,7 +31,7 @@ module.exports = Composer.command(getCommandName("sendmoney"), async (ctx) => {
 
   await setUser({ user: targetUserEntity });
 
-  await await increaseBankAmount({ ctx, increaseAmount: taxRate });
+  await increaseBankAmount({ ctx, increaseAmount: taxRate });
 
-  return ctx.reply(`💰 ${getString("SENDED_AMOUNT")} ${moneyAmount} \n📈 ${getString("TAX_AMOUNT")}: ${taxRate}`);
+  return ctx.reply(`💰 ${getString("SENDED_AMOUNT")} ${moneyAmount} \n📈 ${getString("TAX_AMOUNT")} ${taxRate}`);
 });

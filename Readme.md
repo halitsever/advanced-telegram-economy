@@ -49,6 +49,20 @@ Run with production mode:
 TELEGRAM_BOT_TOKEN=... LANG=<en|tr> npm run start
 ```
 
+Run with Docker:
+
+```bash
+TELEGRAM_BOT_TOKEN=... LANG=<en|tr> docker compose up -d --build
+```
+
+The database is kept in `/data-telegram-bot/data.sqlite` on the host. Older compose files mounted `/data-telegram-bot` as the database file itself. If yours is a file, move it into a folder before you upgrade so your balances carry over:
+
+```bash
+sudo mv /data-telegram-bot /data-telegram-bot.sqlite
+sudo mkdir /data-telegram-bot
+sudo mv /data-telegram-bot.sqlite /data-telegram-bot/data.sqlite
+```
+
 <a align="center" href="https://github.com/halitsever/advanced-telegram-economy/issues">
 <img src="https://halitsever-api.vercel.app/api/issue"/>
 </a>

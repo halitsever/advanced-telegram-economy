@@ -4,5 +4,6 @@ const { getString, getCommandName } = require("../lang/index");
 
 module.exports = Composer.command(getCommandName("centralbank"), async (ctx) => {
   const bankInfo = await getBankInfo({ ctx });
-  ctx.reply(`${getString("TOTAL_AMOUNT")} ${bankInfo.balance} 💰 ${getString("BANK_INFO")} `);
+  if (!bankInfo) return ctx.reply(getString("DATABASE_LOCK"));
+  return ctx.reply(`${getString("TOTAL_AMOUNT")} ${bankInfo.balance} 💰 ${getString("BANK_INFO")} `);
 });

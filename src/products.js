@@ -6,7 +6,7 @@ const products = [
     },
     code: "BADWORD_PASS",
     currency: "💵",
-    price: "2",
+    price: 2,
   },
   {
     name: {
@@ -15,7 +15,7 @@ const products = [
     },
     code: "IMAGE_SHARE_PASS",
     currency: "💵",
-    price: "1",
+    price: 1,
   },
   {
     name: {
@@ -24,7 +24,7 @@ const products = [
     },
     code: "STICKER_SHARE_PASS",
     currency: "💵",
-    price: "1",
+    price: 1,
   },
   {
     name: {
@@ -33,16 +33,7 @@ const products = [
     },
     code: "LINK_SHARE_PASS",
     currency: "💵",
-    price: "2",
-  },
-  {
-    name: {
-      en: "test",
-      tr: "test",
-    },
-    code: "TEST",
-    currency: "🆙",
-    price: "1",
+    price: 2,
   },
 ];
 

@@ -34,11 +34,16 @@ module.exports = Composer.command(getCommandName("slot"), async (ctx) => {
       await increaseBankAmount({ ctx, increaseAmount: 2 });
     }
 
-    setTimeout(async () => {
-      return await ctx.editMessageText(
-        `${getString("SLOT_MACHINE")}:\n${slots[result1]} | ${slots[result2]} | ${slots[result3]}\n ${win ? `🤑 ${getString("SLOT_WIN")} ${win}` : `🥶 ${getString("SLOT_LOSS")} 2`}`,
-        slot,
-      );
+    setTimeout(() => {
+      // Nothing awaits this timer, so a failed edit (message deleted, rate limit) must not become an unhandled rejection.
+      ctx.telegram
+        .editMessageText(
+          slot.chat.id,
+          slot.message_id,
+          undefined,
+          `${getString("SLOT_MACHINE")}:\n${slots[result1]} | ${slots[result2]} | ${slots[result3]}\n ${win ? `🤑 ${getString("SLOT_WIN")} ${win}` : `🥶 ${getString("SLOT_LOSS")} 2`}`,
+        )
+        .catch((err) => logger.error(err));
     }, 3000);
   } catch (err) {
     logger.error(err);

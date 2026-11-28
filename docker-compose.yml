@@ -2,11 +2,12 @@ version: "3.9"
 
 services:
   server:
-    user: root 
+    user: root
     build: .
     environment:
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
       - LANG=${LANG}
+      - DATABASE_PATH=/app/data/data.sqlite
     volumes:
-      - /data-telegram-bot:/app/data.sqlite:rw
+      - /data-telegram-bot:/app/data:rw
     restart: always

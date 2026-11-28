@@ -2,7 +2,7 @@ const escapeCharacter = "\n";
 
 module.exports = {
   HOW_TO_BUY: "🛍️ You can make a purchase in the format /buy productcode, for example, if you write /buy 1, it will deduct that product from your balance.",
-  EARN_MONEY_TIP: "💰 By typing /salary, you can make a withdrawal every 4 hours or stay active in the chat to drop surprise money crates.",
+  EARN_MONEY_TIP: "💰 By typing /salary, you can claim a salary once every hour, or stay active in the chat to drop surprise money crates.",
   DATABASE_LOCK: "🔴 An error occurred. Please try again.",
   CURRENCY_INFO: "💎 100 units of Money equals 1 Diamond. You can earn diamonds quickly by completing tasks, using coupons, or purchasing them for ₺.",
   TIMEOUT_ERROR: "🔴 You did not respond to the command in time.",
@@ -10,7 +10,7 @@ module.exports = {
   CAPTCHA_HINT: "Type the number marked with the green emoji:",
   MONEY: "Money",
   DIAMOND: "Diamond",
-  CASE_DROP: "🎁 Congratulations, you dropped a money crate! You can type /crate to open it.",
+  CASE_DROP: "🎁 Congratulations, you dropped a money crate! You can type /case to open it.",
   PRODUCT_NOT_AVAILABLE: "🔴 The product you requested is not available in the market.",
   ALREADY_BOUGHT: "🔴 You already own this product.",
   MONEY_NOT_AVAILABLE: `⚙ Your salary couldn't be deposited because there isn't enough money in the central bank.${escapeCharacter}${escapeCharacter} ℹ️ You can check the total money in the central bank with the /centralbank command.`,
@@ -32,7 +32,10 @@ module.exports = {
   SLOT_LOSS: "Lost:",
   SLOT_MACHINE: "🎰 Slot Machine",
   SELF_SEND: "🔴 You can't send money to yourself.",
-  TAX_INFO: "🔴 The amount you will deposit must be over 2, and half of the amount you deposit goes to tax.",
+  TAX_INFO: "🔴 The amount you send must be more than 2, and 1 unit of it goes to the central bank as tax.",
   TAX_AMOUNT: "📈 Amount of tax deducted:",
   SENDED_AMOUNT: "💰 Amount sent:",
+  INVALID_PRODUCT_ID: "Type the product number from /market, for example /buy 1.",
+  ITEMS_EMPTY: "You don't own any products yet. See /market for what you can buy.",
+  RANKING_EMPTY: "Nobody is on the ranking yet.",
 };
